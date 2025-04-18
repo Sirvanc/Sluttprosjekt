@@ -35,14 +35,14 @@ correct_streak = 0  # Teller for antall riktige svar på rad
 def beep(varighet=0.1, frekvens=1000):
     """Kort pip for riktig svar."""
     buzzer.freq(frekvens)
-    buzzer.duty_u16(30000)
+    buzzer.duty_u16(65535)# Set to max volume
     sleep(varighet)
     buzzer.duty_u16(0)
 
 def feil_beep(varighet=0.5, frekvens=500):
     """Langt pip for feil svar.""" 
     buzzer.freq(frekvens)
-    buzzer.duty_u16(30000)
+    buzzer.duty_u16(65535)# Set to max volume
     sleep(varighet)
     buzzer.duty_u16(0)
 
@@ -50,7 +50,7 @@ def nederlagtone():
     """Spiller en trist tone ved tap."""
     for frekvens in [500, 400, 300]:
         buzzer.freq(frekvens)
-        buzzer.duty_u16(30000)
+        buzzer.duty_u16(65535)# Set to max volume
         sleep(0.3)
     buzzer.duty_u16(0)
 
@@ -58,7 +58,7 @@ def seierstone():
     """Spiller en enkel seierstone."""
     for frekvens in [1000, 1200, 1500]:
         buzzer.freq(frekvens)
-        buzzer.duty_u16(30000)
+        buzzer.duty_u16(65535)# Set to max volume
         sleep(0.2)
     buzzer.duty_u16(0)
 
@@ -66,7 +66,7 @@ def dansetone():
     """Spiller en 'dansetone' som belønning."""
     for frekvens in [1500, 1800, 2000, 2200]:
         buzzer.freq(frekvens)
-        buzzer.duty_u16(30000)
+        buzzer.duty_u16(65535)# Set to max volume
         sleep(0.1)
     buzzer.duty_u16(0)
 
