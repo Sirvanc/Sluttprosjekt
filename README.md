@@ -1,1 +1,1 @@
-For å kjøre koden må tilkoble til selve micropico 
+For å kjøre koden må micropico tilkobles da kan  teste 
