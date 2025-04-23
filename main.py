@@ -9,7 +9,7 @@ USE_BUTTONS = True  # Sett til True for å bruke knapper (False for testing i ko
 # Definer pinner for LED, buzzer og knapper
 GREEN_LED_PIN = 2  
 RED_LED_PIN = 3    
-BUZZER_PIN = 4
+BUZZER_PIN = 15
 BUTTON_PARTALL_PIN = 5  
 BUTTON_ODD_PIN = 6        
 
@@ -32,25 +32,25 @@ score = 0
 attempts = 0
 correct_streak = 0  # Teller for antall riktige svar på rad
 
-def beep(varighet=0.1, frekvens=1000):
+def beep(varighet=0.1, frekvens=2000):
     """Kort pip for riktig svar."""
     buzzer.freq(frekvens)
-    buzzer.duty_u16(65535)# Set to max volume
+    buzzer.duty_u16(6000)# Set to max volume
     sleep(varighet)
     buzzer.duty_u16(0)
 
-def feil_beep(varighet=0.5, frekvens=500):
+def feil_beep(varighet=0.5, frekvens=2000):
     """Langt pip for feil svar.""" 
     buzzer.freq(frekvens)
-    buzzer.duty_u16(65535)# Set to max volume
+    buzzer.duty_u16(6000)# Set to max volume
     sleep(varighet)
     buzzer.duty_u16(0)
 
 def nederlagtone():
     """Spiller en trist tone ved tap."""
-    for frekvens in [500, 400, 300]:
+    for frekvens in [1500, 1200, 1000]:
         buzzer.freq(frekvens)
-        buzzer.duty_u16(65535)# Set to max volume
+        buzzer.duty_u16(6000)# Set to max volume
         sleep(0.3)
     buzzer.duty_u16(0)
 
@@ -58,7 +58,7 @@ def seierstone():
     """Spiller en enkel seierstone."""
     for frekvens in [1000, 1200, 1500]:
         buzzer.freq(frekvens)
-        buzzer.duty_u16(65535)# Set to max volume
+        buzzer.duty_u16(6000)# Set to max volume
         sleep(0.2)
     buzzer.duty_u16(0)
 
@@ -66,7 +66,7 @@ def dansetone():
     """Spiller en 'dansetone' som belønning."""
     for frekvens in [1500, 1800, 2000, 2200]:
         buzzer.freq(frekvens)
-        buzzer.duty_u16(65535)# Set to max volume
+        buzzer.duty_u16(6000)# Set to max volume
         sleep(0.1)
     buzzer.duty_u16(0)
 
